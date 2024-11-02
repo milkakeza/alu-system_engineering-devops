@@ -1,5 +1,5 @@
 # Configuring ssh client so that I can connect to the server without typing a password.
 
-Host (alu_server IP)
+Host 54.163.60.36
 IdentityFile ~/.ssh/school
 PasswordAuthentication no
