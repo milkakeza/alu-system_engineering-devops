@@ -6,7 +6,7 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
 
-string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.github.com\/milkakeza permanent;"
+string_for_replacement="server_name _;\n\tlocation /redirect_me {\n\t\treturn 301 https://www.github.com/milkakeza;\n\t}"
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
